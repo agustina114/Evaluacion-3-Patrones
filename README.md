@@ -1,8 +1,8 @@
 # Evaluacion-3-Patrones de diseño
 
-##**Sistema de Calendario de Evaluaciones**
+#**Sistema de Calendario de Evaluaciones**
 
-##**Problematica planteada**
+#**Problematica planteada**
 
 - El proyecto surge de una problematica personal relacionada con la desorganizacion de tareas, evaluacione y trabajos académicos.
   
@@ -15,7 +15,7 @@ Este sistema busca solucionar el problema de priorizacion mediante:
   - Posibilidad de deshacer acciones.
   - Visualización organizada de las actividades.
     
-##**🎯 Objetivo del sistema**
+#**🎯 Objetivo del sistema**
    Diseñar un calendario de evaluaciones que:
   - Permita al usuario agregar tareas con fecha de entrega.
   - Genere alertas cuando se aproxima el vencimiento.
@@ -23,7 +23,7 @@ Este sistema busca solucionar el problema de priorizacion mediante:
   - Permita deshacer cambios de estado.
   - Sea modular, escalable y mantenible utilizando los patrones de diseño.
 
-##**🔧 Patrones de Diseño**
+#**🔧 Patrones de Diseño**
 
 1️⃣ Singleton -- *Control Centralizado del calendario*
     - Dónde se aplicó: Clase **Calendario**
@@ -80,7 +80,7 @@ Este sistema busca solucionar el problema de priorizacion mediante:
             -Calendario.java
         -Main.java
 ```
-##**🔬 Conclusión personal**
+**🔬 Conclusión personal**
 
 - Este proyecto permite al usuario mantener una planificacion clara de sus tareas, ofreciendo:
 ✅ Registro de actividades
