@@ -1,9 +1,10 @@
-# Evaluacion-3-Patrones
+# Evaluacion-3-Patrones de diseño
 
 ##**Calendario de Evaluaciones**
 
-**Problematica planteada**
+##**Problematica planteada**
 - El proyecto surge de una problematica personal relacionada con la desorganizacion de tareas, evaluacione y trabajos académicos.
+  
 - En la vida cotidiana es común olvidar fechas importantes o perder el orden de que tareas deben realizarse con mayor urgencia. La falta de planificacion genera estres y baja productividad.
 
 Este sistema busca solucionar el problema de priorizacion mediante:
@@ -30,6 +31,7 @@ Este sistema busca solucionar el problema de priorizacion mediante:
         * Centralizacion.
         * Consistencia de los datos.
         * Evita problemas de sincronizacion.
+
         
 2️⃣ Observer — *Alertas automáticas de proximidad de vencimiento*
     - Dónde se aplicó: Interfaces **Observador**, clase **AlertaProximidad**.
@@ -39,6 +41,7 @@ Este sistema busca solucionar el problema de priorizacion mediante:
         * Facil de extender con nuevos tipos de notificaciones.
         * Permite futuras ampliaciones.
 
+
 3️⃣ Command — *Cambio de estado con deshacer*   
     - Dónde se aplicó: Interfaces **Comando**, clases **ComandoCambiarEstado**, **GestorComandos**.
     - Por qué: Permite encapsular cada operación de cambio de estado (por ejemplo, marcar como completada) y guardar un historial papra poder deshacer la ultima accion si el usuario se equivoca.
@@ -46,6 +49,7 @@ Este sistema busca solucionar el problema de priorizacion mediante:
         * Deshacer (Undo) simple y eficiente.
         * Encapsula las operaciones de forma independiente.
         * Facilita la extensión a nuevos comandos en el futuro.
+
 
 4️⃣ Facade — *Simplificación de la interfaz de uso* (Extra)
     - Dónde se aplicó: Clase **CalendarioFacade**
@@ -75,3 +79,12 @@ Este sistema busca solucionar el problema de priorizacion mediante:
             -Calendario.java
         -Main.java
 ```
+##**🔬 Conclusión personal**
+
+- Este proyecto permite al usuario mantener una planificacion clara de sus tareas, ofreciendo:
+✅ Registro de actividades
+✅ Priorización automática
+✅ Alertas tempranas de vencimiento
+✅ Control del estado de las tareas
+✅ Deshacer acciones recientes
+
