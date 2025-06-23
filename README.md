@@ -1,68 +1,64 @@
-# Evaluacion-3-Patrones de diseño
+# 📅 Sistema de Calendario de Evaluaciones
 
-**Sistema de Calendario de Evaluaciones**
+Proyecto realizado aplicando **Patrones de Diseño** en Java.
 
-**Problematica planteada**
+---
 
-- El proyecto surge de una problematica personal relacionada con la desorganizacion de tareas, evaluaciones y trabajos académicos.
-  
-- En la vida cotidiana es común olvidar fechas importantes o perder el orden de que tareas deben realizarse con mayor urgencia. La falta de planificacion genera estrés y baja productividad.
+## 💡 Problemática planteada
 
-Este sistema busca solucionar el problema de priorización mediante:
+Este proyecto surge de una problemática personal relacionada con la desorganización de tareas, evaluaciones y trabajos académicos.
 
-  - Registro de tareas con fechas de entrega.
-  - Alertas automaticas cuando se aproxima el plazo.
-  - Control del estado de cada tarea (pendiente, completada, entregada).
-  - Posibilidad de deshacer acciones.
-  - Visualización organizada de las actividades.
-    
-**🎯 Objetivo del sistema**
+En la vida cotidiana es común olvidar fechas importantes o perder el orden de las tareas más urgentes, lo que genera estrés y baja productividad.
 
-   Diseñar un calendario de evaluaciones que:
-  - Permita al usuario agregar tareas con fecha de entrega.
-  - Genere alertas cuando se aproxima el vencimiento.
-  - Mantenga un control del estado de cada tarea.
-  - Permita deshacer cambios de estado.
-  - Sea modular, escalable y mantenible utilizando los patrones de diseño.
+El sistema busca solucionar el problema de priorización mediante:
 
-**🔧 Patrones de Diseño**
+- Registro de tareas con fechas de entrega.
+- Alertas automáticas cuando se aproxima el vencimiento.
+- Control del estado de cada tarea (pendiente, completada, entregada).
+- Posibilidad de deshacer acciones.
+- Visualización organizada de las actividades.
 
-1️⃣ Singleton -- *Control Centralizado del calendario*
-    - Dónde se aplicó: Clase **Calendario**
-    - Por qué: Se necesita que exista un unico calendario central para todas las tareas, evitando multiples instancias desincronizadas. El patrón **Singleton** garantiza que siempre se acceda a la misma instancia.
-    - Beneficio: 
-        * Centralización.
-        * Consistencia de los datos.
-        * Evita problemas de sincronización.
+---
 
-        
-2️⃣ Observer — *Alertas automáticas de proximidad de vencimiento*
-    - Dónde se aplicó: Interfaces **Observador**, clase **AlertaProximidad**.
-    - Por qué: Queremos notificar al usuario cuando alguna tarea esta proxima a vencer. Cada vez que se agrega una nueva tarea, los observadores son notificados y pueden evaluar si deben emitir alertas. 
-    - Beneficio: 
-        * Desacoplamiento: el calendario no sabe que hacer con las alertas.
-        * Facil de extender con nuevos tipos de notificaciones.
-        * Permite futuras ampliaciones.
+## 🎯 Objetivo del sistema
 
+Diseñar un calendario de evaluaciones que:
 
-3️⃣ Command — *Cambio de estado con deshacer*   
-    - Dónde se aplicó: Interfaces **Comando**, clases **ComandoCambiarEstado**, **GestorComandos**.
-    - Por qué: Permite encapsular cada operación de cambio de estado (por ejemplo, marcar como completada) y guardar un historial para poder deshacer la ultima acción si el usuario se equivoca.
-    - Beneficio: 
-        * Deshacer (Undo) simple y eficiente.
-        * Encapsula las operaciones de forma independiente.
-        * Facilita la extensión a nuevos comandos en el futuro.
+- Permita agregar tareas con fecha de entrega.
+- Genere alertas al aproximarse la fecha de vencimiento.
+- Controle el estado de cada tarea.
+- Permita deshacer cambios recientes.
+- Sea modular, escalable y mantenible mediante patrones de diseño.
 
+---
 
-4️⃣ Facade — *Simplificación de la interfaz de uso* (Extra)
-    - Dónde se aplicó: Clase **CalendarioFacade**
-    - Por qué: El menú de consola funciona como cliente del sistema y para evitar tener que coordinar multiples clases directamente se crea una fachada que centraliza las operaciones mas comunes de forma simple.
-    - Beneficio: 
-        * Simplifica el accceso para el usuario final.
-        * Reduce el acoplamiento.
-        * Permite agregar o modificar la logica interna sin afectar el cliente.
+## 🔧 Patrones de Diseño Aplicados
 
-```Estructura del proyecto
+### 1️⃣ Singleton — Control Centralizado del Calendario
+
+- **Aplicado en:** `Calendario`
+- **Motivo:** Asegurar que sólo exista una instancia del calendario.
+
+### 2️⃣ Observer — Alertas Automáticas
+
+- **Aplicado en:** `Observador`, `AlertaProximidad`
+- **Motivo:** Notificar al usuario cuando una tarea está próxima a vencerse.
+
+### 3️⃣ Command — Cambio de Estado con Deshacer
+
+- **Aplicado en:** `Comando`, `ComandoCambiarEstado`, `GestorComandos`
+- **Motivo:** Encapsular operaciones de cambio de estado y permitir deshacer acciones.
+
+### 4️⃣ Facade — Simplificación de la Interfaz
+
+- **Aplicado en:** `CalendarioFacade`
+- **Motivo:** Simplificar el uso del sistema centralizando las operaciones en un único punto de entrada.
+
+---
+
+## 📁 Estructura del Proyecto
+```
+
     /Sistema Calendario
       /src
         -/command
@@ -82,12 +78,16 @@ Este sistema busca solucionar el problema de priorización mediante:
             -Calendario.java
         -Main.java
 ```
-**🔬 Conclusión personal**
+---
 
-- Este proyecto permite al usuario mantener una planificacion clara de sus tareas, ofreciendo:
-✅ Registro de actividades
-✅ Priorización automática
-✅ Alertas tempranas de vencimiento
-✅ Control del estado de las tareas
-✅ Deshacer acciones recientes
+## 🔬 Conclusión
 
+Este sistema permite:
+
+- ✅ Registrar tareas.
+- ✅ Priorizar tareas según vencimiento.
+- ✅ Alertar al usuario cuando las tareas están próximas.
+- ✅ Controlar el estado de cada actividad.
+- ✅ Deshacer acciones recientes.
+
+---
