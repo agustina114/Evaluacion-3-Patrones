@@ -32,30 +32,60 @@ Diseñar un calendario de evaluaciones que:
 
 ---
 
-## 🔧 Patrones de Diseño Aplicados
+---
 
-### 1️⃣ Singleton — Control Centralizado del Calendario
+### 1️⃣ Singleton — *Control Centralizado del Calendario*
 
-- **Aplicado en:** `Calendario`
-- **Motivo:** Asegurar que sólo exista una instancia del calendario.
+- **Dónde se aplicó:** Clase `Calendario`
+- **Por qué:**  
+  Se requiere un único calendario centralizado para gestionar todas las tareas y evitar múltiples instancias desincronizadas.  
+  El patrón Singleton asegura que siempre se accede a la misma instancia.
 
-### 2️⃣ Observer — Alertas Automáticas
-
-- **Aplicado en:** `Observador`, `AlertaProximidad`
-- **Motivo:** Notificar al usuario cuando una tarea está próxima a vencerse.
-
-### 3️⃣ Command — Cambio de Estado con Deshacer
-
-- **Aplicado en:** `Comando`, `ComandoCambiarEstado`, `GestorComandos`
-- **Motivo:** Encapsular operaciones de cambio de estado y permitir deshacer acciones.
-
-### 4️⃣ Facade — Simplificación de la Interfaz
-
-- **Aplicado en:** `CalendarioFacade`
-- **Motivo:** Simplificar el uso del sistema centralizando las operaciones en un único punto de entrada.
+- **Beneficios:**
+  - Centralización de la gestión.
+  - Consistencia de los datos.
+  - Evita problemas de sincronización.
 
 ---
 
+### 2️⃣ Observer — *Alertas automáticas de proximidad de vencimiento*
+
+- **Dónde se aplicó:** Interfaces `Observador`, clase `AlertaProximidad`
+- **Por qué:**  
+  Permite notificar al usuario cuando alguna tarea está próxima a vencer. Cada vez que se agrega una nueva tarea, los observadores son notificados y evalúan si deben emitir alertas.
+
+- **Beneficios:**
+  - Desacoplamiento entre el calendario y el sistema de alertas.
+  - Facilita la extensión a nuevos tipos de notificaciones.
+  - Permite futuras ampliaciones (email, SMS, etc.).
+
+---
+
+### 3️⃣ Command — *Cambio de estado con deshacer*
+
+- **Dónde se aplicó:** Interfaces `Comando`, clases `ComandoCambiarEstado`, `GestorComandos`
+- **Por qué:**  
+  Permite encapsular las operaciones de cambio de estado (por ejemplo, marcar una tarea como completada) y almacenar un historial para deshacer acciones si el usuario comete un error.
+
+- **Beneficios:**
+  - Implementación simple del deshacer (Undo).
+  - Encapsulación de operaciones de forma independiente.
+  - Facilita la extensión con nuevos comandos.
+
+---
+
+### 4️⃣ Facade — *Simplificación de la interfaz de uso*
+
+- **Dónde se aplicó:** Clase `CalendarioFacade`
+- **Por qué:**  
+  El menú de consola actúa como cliente del sistema. La fachada centraliza y simplifica el acceso a las operaciones más comunes evitando que el usuario interactúe directamente con las múltiples clases internas.
+
+- **Beneficios:**
+  - Simplificación de la lógica de interacción.
+  - Reducción del acoplamiento.
+  - Facilidad para ampliar o modificar la lógica sin afectar al cliente.
+
+---
 ## 📁 Estructura del Proyecto
 ```
 
