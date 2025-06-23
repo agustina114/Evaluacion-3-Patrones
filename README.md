@@ -1,8 +1,9 @@
 # Evaluacion-3-Patrones de diseño
 
-##**Calendario de Evaluaciones**
+##**Sistema de Calendario de Evaluaciones**
 
 ##**Problematica planteada**
+
 - El proyecto surge de una problematica personal relacionada con la desorganizacion de tareas, evaluacione y trabajos académicos.
   
 - En la vida cotidiana es común olvidar fechas importantes o perder el orden de que tareas deben realizarse con mayor urgencia. La falta de planificacion genera estres y baja productividad.
