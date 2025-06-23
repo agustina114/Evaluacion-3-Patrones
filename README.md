@@ -4,18 +4,20 @@
 
 **Problematica planteada**
 
-- El proyecto surge de una problematica personal relacionada con la desorganizacion de tareas, evaluacione y trabajos académicos.
+- El proyecto surge de una problematica personal relacionada con la desorganizacion de tareas, evaluaciones y trabajos académicos.
   
-- En la vida cotidiana es común olvidar fechas importantes o perder el orden de que tareas deben realizarse con mayor urgencia. La falta de planificacion genera estres y baja productividad.
+- En la vida cotidiana es común olvidar fechas importantes o perder el orden de que tareas deben realizarse con mayor urgencia. La falta de planificacion genera estrés y baja productividad.
 
-Este sistema busca solucionar el problema de priorizacion mediante:
+Este sistema busca solucionar el problema de priorización mediante:
+
   - Registro de tareas con fechas de entrega.
   - Alertas automaticas cuando se aproxima el plazo.
   - Control del estado de cada tarea (pendiente, completada, entregada).
   - Posibilidad de deshacer acciones.
   - Visualización organizada de las actividades.
     
-#**🎯 Objetivo del sistema**
+**🎯 Objetivo del sistema**
+
    Diseñar un calendario de evaluaciones que:
   - Permita al usuario agregar tareas con fecha de entrega.
   - Genere alertas cuando se aproxima el vencimiento.
@@ -27,11 +29,11 @@ Este sistema busca solucionar el problema de priorizacion mediante:
 
 1️⃣ Singleton -- *Control Centralizado del calendario*
     - Dónde se aplicó: Clase **Calendario**
-    - Por qué: Se necesita que exista un unico calendario central para todas las tareas, evitando multiples instancias desincronizadas. El patrón **Singleton** garantiza que siempre que se accede a la misma instancia.
+    - Por qué: Se necesita que exista un unico calendario central para todas las tareas, evitando multiples instancias desincronizadas. El patrón **Singleton** garantiza que siempre se acceda a la misma instancia.
     - Beneficio: 
-        * Centralizacion.
+        * Centralización.
         * Consistencia de los datos.
-        * Evita problemas de sincronizacion.
+        * Evita problemas de sincronización.
 
         
 2️⃣ Observer — *Alertas automáticas de proximidad de vencimiento*
@@ -45,7 +47,7 @@ Este sistema busca solucionar el problema de priorizacion mediante:
 
 3️⃣ Command — *Cambio de estado con deshacer*   
     - Dónde se aplicó: Interfaces **Comando**, clases **ComandoCambiarEstado**, **GestorComandos**.
-    - Por qué: Permite encapsular cada operación de cambio de estado (por ejemplo, marcar como completada) y guardar un historial papra poder deshacer la ultima accion si el usuario se equivoca.
+    - Por qué: Permite encapsular cada operación de cambio de estado (por ejemplo, marcar como completada) y guardar un historial para poder deshacer la ultima acción si el usuario se equivoca.
     - Beneficio: 
         * Deshacer (Undo) simple y eficiente.
         * Encapsula las operaciones de forma independiente.
